@@ -21,7 +21,7 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: CORS_ORIGINS
-        value: http://localhost:5173   # replace with your frontend URL once it is deployed
+        value: https://ai-micro-course-platform-omega.vercel.app/  # replace with your frontend URL once it is deployed
       - key: SHOW_APPROVAL_CODE
         value: "1"
       - key: SEED_DEMO_DATA
