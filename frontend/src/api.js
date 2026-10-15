@@ -9,7 +9,9 @@ export function setToken(t) {
 export async function api(path, { method = "GET", body } = {}) {
   const headers = { "Content-Type": "application/json" };
   if (token) headers.Authorization = `Bearer ${token}`;
-  const OFFLINE = "Can't reach the backend server. Make sure the \"EduAI backend (Flask)\" window is open and shows \"Running on http://127.0.0.1:5000\".";
+  const OFFLINE = BASE
+    ? "The server is waking up (this can take up to a minute on the free plan). Please try again shortly."
+    : "Can't reach the backend server. Make sure the \"EduAI backend (Flask)\" window is open and shows \"Running on http://127.0.0.1:5000\".";
   let res;
   try {
     res = await fetch(`${BASE}/api${path}`, {
