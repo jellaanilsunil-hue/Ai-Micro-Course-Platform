@@ -1,0 +1,126 @@
+[
+ {
+  "topic": "Variables",
+  "text": "A variable is a name that refers to a value. Create one with assignment, e.g. age = 21. The name goes on the left of = and the value on the right."
+ },
+ {
+  "topic": "Data types",
+  "text": "Core Python types: int (whole numbers), float (decimals), str (text), bool (True/False), list, tuple, dict and set. type(x) tells you the type."
+ },
+ {
+  "topic": "Operators",
+  "text": "/ always gives a float, // is floor division, % is the remainder and ** is power. == compares two values and returns True or False."
+ },
+ {
+  "topic": "Loops",
+  "text": "A for loop repeats once per item in a sequence; range(start, stop, step) stops before stop. A while loop repeats while its condition is True. break leaves the loop; continue skips to the next round."
+ },
+ {
+  "topic": "Conditionals",
+  "text": "if, elif and else are checked from top to bottom and only the first True branch runs. Indentation marks each block."
+ },
+ {
+  "topic": "Functions",
+  "text": "A function is defined with def name(parameters): and returns a value with return. Without return it gives back None. Default parameters are used when an argument is left out."
+ },
+ {
+  "topic": "Lists",
+  "text": "Lists are ordered and changeable. Indexing starts at 0 and negative indexes count from the end. Slices a[1:3] stop before the end index."
+ },
+ {
+  "topic": "Dictionaries",
+  "text": "A dictionary maps unique keys to values. d[key] raises KeyError when the key is missing; d.get(key, default) returns the default instead."
+ },
+ {
+  "topic": "Sets",
+  "text": "A set stores unique items only and tests membership very quickly."
+ },
+ {
+  "topic": "Error handling",
+  "text": "try runs code that might fail, except handles a named error, and finally always runs afterwards for clean-up. ValueError means the right type but an unusable value."
+ },
+ {
+  "topic": "Classes",
+  "text": "A class is a blueprint and an object is an instance of it. __init__ runs when an object is created. self is the object the method was called on. Inheritance lets a child class reuse a parent class."
+ },
+ {
+  "topic": "Comprehensions",
+  "text": "A list comprehension builds a list in one line: [expression for item in sequence if condition]."
+ },
+ {
+  "topic": "Complexity",
+  "text": "Big-O describes how work grows with input size n: O(1) constant, O(log n) halving, O(n) one loop, O(n log n) efficient sorting, O(n²) nested loops."
+ },
+ {
+  "topic": "Searching",
+  "text": "Linear search checks every item, O(n). Binary search halves a sorted list each step, O(log n)."
+ },
+ {
+  "topic": "Sorting",
+  "text": "Bubble sort swaps neighbours repeatedly, O(n²). Merge sort splits, sorts halves and merges them, O(n log n)."
+ },
+ {
+  "topic": "Recursion",
+  "text": "A recursive function calls itself on a smaller problem and needs a base case that stops the calls."
+ },
+ {
+  "topic": "Data structures",
+  "text": "Lists keep order; sets and dicts give fast lookups; a stack is last-in-first-out; a queue is first-in-first-out."
+ },
+ {
+  "topic": "Machine learning",
+  "text": "Supervised learning uses labelled examples; unsupervised learning finds structure without labels; reinforcement learning learns from rewards."
+ },
+ {
+  "topic": "Training and testing",
+  "text": "Models are fitted on training data and checked on unseen test data. Overfitting means memorising the training data; underfitting means the model is too simple."
+ },
+ {
+  "topic": "Generative AI",
+  "text": "Generative AI creates new content. LLMs predict the next word and can hallucinate — produce fluent but false statements — so important outputs need human review."
+ },
+ {
+  "topic": "AI ethics",
+  "text": "Responsible AI covers fairness, transparency, privacy, accountability and safety. Bias usually comes from unrepresentative data, and proxy features can carry bias even when a protected attribute is removed."
+ },
+ {
+  "topic": "Regulation",
+  "text": "GDPR governs personal data. The EU AI Act is risk-based: banned uses, high-risk uses with strict duties, and lighter transparency duties for lower-risk uses."
+ },
+ {
+  "topic": "AI strategy",
+  "text": "Start from a business problem with measurable value, check data readiness, pilot small, involve stakeholders, then scale with governance."
+ },
+ {
+  "topic": "Change management",
+  "text": "Kotter's 8 steps: create urgency, form a guiding coalition, create a vision, communicate it, remove obstacles, create short-term wins, build on the change, anchor it in culture."
+ },
+ {
+  "topic": "Strategy",
+  "text": "SWOT: internal strengths and weaknesses, external opportunities and threats. PESTLE: political, economic, social, technological, legal, environmental."
+ },
+ {
+  "topic": "Competitive forces",
+  "text": "Porter's Five Forces: rivalry, threat of new entrants, threat of substitutes, buyer power and supplier power. Barriers to entry protect incumbents."
+ },
+ {
+  "topic": "Marketing",
+  "text": "The 4Ps are product, price, place and promotion. STP means segmentation, targeting and positioning."
+ },
+ {
+  "topic": "Finance",
+  "text": "Profit = revenue − costs. Gross margin = (revenue − COGS) ÷ revenue. ROI = (gain − cost) ÷ cost. Cash flow tracks real money in and out."
+ },
+ {
+  "topic": "Performance",
+  "text": "A KPI is a measurable indicator tied to a strategic goal, with a clear owner."
+ },
+ {
+  "topic": "Leadership",
+  "text": "Transformational leaders inspire with vision; transactional leaders use rewards; servant leaders put the team first; situational leaders adapt to the team."
+ },
+ {
+  "topic": "Study skills",
+  "text": "When stuck: restate the question in your own words, underline key terms, eliminate options you know are wrong, and test what is left against a small example."
+ }
+]

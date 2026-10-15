@@ -1,0 +1,12 @@
+Flask>=3.0
+Flask-SQLAlchemy>=3.1
+Flask-Cors>=4.0
+PyJWT>=2.8
+scikit-learn>=1.4
+numpy>=1.26
+psycopg2-binary>=2.9     # PostgreSQL driver (production)
+gunicorn>=22.0           # production web server
+pytest>=8.0
+# Optional, only if you set HF_QA_MODEL to use a Hugging Face model in the chatbot:
+# transformers>=4.40
+# torch>=2.2

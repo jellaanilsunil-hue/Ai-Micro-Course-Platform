@@ -1,0 +1,1418 @@
+[
+ {
+  "id": "c1",
+  "by": "p1",
+  "pub": true,
+  "icon": "🐍",
+  "title": "Python Programming",
+  "cat": "Programming",
+  "desc": "From first variable to classes and error handling — the core programming micro-course for aspiring developers.",
+  "levels": [
+   {
+    "id": "c1l1",
+    "n": 1,
+    "title": "Python Foundations",
+    "pm": 60,
+    "tip": "Focus on data types, the difference between = and ==, and how range() counts.",
+    "chapters": [
+     {
+      "title": "Variables & Data Types",
+      "blocks": [
+       [
+        "p",
+        "A variable is a name that points to a value. Python works out the type from the value — you never declare it."
+       ],
+       [
+        "code",
+        "age    = 21        # int   — whole number\nprice  = 9.99      # float — decimal\nname   = \"Alice\"   # str   — text\nactive = True      # bool  — True / False\n\ntype(price)        # <class 'float'>"
+       ],
+       [
+        "h",
+        "Converting between types"
+       ],
+       [
+        "code",
+        "int(\"42\")      # 42\nfloat(\"3.5\")   # 3.5\nstr(42)        # \"42\"\nbool(0)        # False — zero is \"falsy\""
+       ],
+       [
+        "tip",
+        "Single = stores a value. Double == compares two values and gives True or False."
+       ]
+      ]
+     },
+     {
+      "title": "Operators & Strings",
+      "blocks": [
+       [
+        "p",
+        "Arithmetic operators work as you expect, with three Python specials worth memorising."
+       ],
+       [
+        "code",
+        "7 / 2     # 3.5  — \"/\" always returns a float\n7 // 2    # 3    — floor division drops the decimal\n7 % 2     # 1    — remainder\n2 ** 3    # 8    — power"
+       ],
+       [
+        "h",
+        "Working with strings"
+       ],
+       [
+        "code",
+        "first = \"Ada\"\nfull  = first + \" Lovelace\"       # join with +\nf\"Hello {first}!\"                 # f-string → \"Hello Ada!\"\n\"  hi  \".strip()                  # \"hi\"\n\"a,b,c\".split(\",\")                # [\"a\", \"b\", \"c\"]"
+       ],
+       [
+        "warn",
+        "Strings are immutable: name.upper() returns a NEW string; it does not change name."
+       ]
+      ]
+     },
+     {
+      "title": "Decisions & Loops",
+      "blocks": [
+       [
+        "code",
+        "score = 72\nif score >= 70:\n    grade = \"Distinction\"\nelif score >= 50:\n    grade = \"Pass\"\nelse:\n    grade = \"Resit\""
+       ],
+       [
+        "p",
+        "Python checks conditions from top to bottom and runs only the first block that is True. Indentation shows which lines belong to the block."
+       ],
+       [
+        "code",
+        "for i in range(3):        # 0, 1, 2  — stops BEFORE 3\n    print(i)\n\nfor n in range(10):\n    if n == 4: break      # leave the loop completely\n    if n % 2: continue    # skip odd numbers\n    print(n)              # 0, 2"
+       ],
+       [
+        "ok",
+        "range(start, stop, step) never includes stop. range(2, 10, 3) gives 2, 5, 8."
+       ]
+      ]
+     }
+    ],
+    "qs": [
+     {
+      "q": "What data type is the value 3.0 in Python?",
+      "opts": [
+       "int",
+       "float",
+       "str",
+       "bool"
+      ],
+      "ans": 1,
+      "topic": "Data types",
+      "diff": 1,
+      "ch": 0,
+      "hints": [
+       "Look closely at how the number is written — what does the \".0\" tell Python?",
+       "Python has one type for whole numbers and another for numbers written with a decimal point."
+      ],
+      "why": "Any number written with a decimal point is stored as a decimal-number type, even when the part after the point is zero."
+     },
+     {
+      "q": "What is the result of 7 // 2?",
+      "opts": [
+       "3.5",
+       "3",
+       "4",
+       "1"
+      ],
+      "ans": 1,
+      "topic": "Operators",
+      "diff": 1,
+      "ch": 1,
+      "hints": [
+       "// is not the same operator as /.",
+       "Divide first, then think about what \"floor\" does to the decimal part."
+      ],
+      "why": "Floor division divides and then rounds down to the nearest whole number."
+     },
+     {
+      "q": "Which line stores the value 10 in a variable called score?",
+      "opts": [
+       "score == 10",
+       "10 = score",
+       "score = 10",
+       "int score = 10"
+      ],
+      "ans": 2,
+      "topic": "Variables",
+      "diff": 1,
+      "ch": 0,
+      "hints": [
+       "Which side of the equals sign does the variable name go on?",
+       "One of these symbols compares rather than stores."
+      ],
+      "why": "Assignment uses a single equals sign with the name on the left and the value on the right; Python needs no type keyword."
+     },
+     {
+      "q": "Which values does range(2, 10, 3) produce?",
+      "opts": [
+       "2, 5, 8",
+       "2, 5, 8, 11",
+       "3, 6, 9",
+       "2, 4, 6, 8"
+      ],
+      "ans": 0,
+      "topic": "Loops",
+      "diff": 2,
+      "ch": 2,
+      "hints": [
+       "The third number is the step size.",
+       "Start at 2, keep adding 3, and stop before you reach 10."
+      ],
+      "why": "range starts at the first number, adds the step each time, and never includes the stop value."
+     },
+     {
+      "q": "x = 15. Which branch runs?\nif x > 20: A\nelif x > 10: B\nelse: C",
+      "opts": [
+       "A",
+       "B",
+       "C",
+       "B and C"
+      ],
+      "ans": 1,
+      "topic": "Conditionals",
+      "diff": 2,
+      "ch": 2,
+      "hints": [
+       "Test each condition in order with x = 15.",
+       "Remember: once one branch runs, Python skips the rest."
+      ],
+      "why": "if / elif / else checks conditions top to bottom and runs only the first one that is True."
+     }
+    ]
+   },
+   {
+    "id": "c1l2",
+    "n": 2,
+    "title": "Functions & Data Structures",
+    "pm": 65,
+    "tip": "Know what a function returns without a return statement, how indexes count, and when to use a dict.",
+    "chapters": [
+     {
+      "title": "Functions",
+      "blocks": [
+       [
+        "code",
+        "def area(width, height=1):    # height has a default\n    return width * height\n\narea(4, 3)      # 12\narea(5)         # 5 — uses the default height"
+       ],
+       [
+        "p",
+        "Parameters are the names in the definition; arguments are the values you pass in. return sends a value back to the caller."
+       ],
+       [
+        "ok",
+        "A function with no return statement gives back None automatically."
+       ]
+      ]
+     },
+     {
+      "title": "Lists & Tuples",
+      "blocks": [
+       [
+        "code",
+        "nums = [4, 8, 15, 16]\nnums[0]        # 4   — indexes start at 0\nnums[-1]       # 16  — negative counts from the end\nnums[1:3]      # [8, 15] — slice stops before 3\nnums.append(23)\nlen(nums)      # 5"
+       ],
+       [
+        "p",
+        "Lists are ordered and changeable. Tuples, written with ( ), are ordered but cannot be changed after creation."
+       ],
+       [
+        "code",
+        "point = (3, 4)\npoint[0] = 9   # TypeError — tuples are immutable"
+       ]
+      ]
+     },
+     {
+      "title": "Dictionaries & Sets",
+      "blocks": [
+       [
+        "code",
+        "ages = {\"Ana\": 30, \"Ben\": 25}\nages[\"Ana\"]            # 30\nages[\"Cy\"] = 41        # add a key\nages.get(\"Dee\", 0)     # 0 — safe default, no KeyError"
+       ],
+       [
+        "p",
+        "A set stores unique items only: {1, 2, 2, 3} becomes {1, 2, 3}. Use it to remove duplicates or test membership quickly."
+       ],
+       [
+        "warn",
+        "ages[\"Dee\"] raises KeyError when the key is missing. .get() avoids that."
+       ]
+      ]
+     }
+    ],
+    "qs": [
+     {
+      "q": "What does a function return if it has no return statement?",
+      "opts": [
+       "0",
+       "None",
+       "False",
+       "An error"
+      ],
+      "ans": 1,
+      "topic": "Functions",
+      "diff": 1,
+      "ch": 0,
+      "hints": [
+       "It is a special Python value that means \"nothing\".",
+       "It is not a number and not a boolean."
+      ],
+      "why": "Python functions without an explicit return hand back a special empty value automatically."
+     },
+     {
+      "q": "Given nums = [4, 8, 15, 16], what is nums[-1]?",
+      "opts": [
+       "4",
+       "15",
+       "16",
+       "IndexError"
+      ],
+      "ans": 2,
+      "topic": "Lists",
+      "diff": 1,
+      "ch": 1,
+      "hints": [
+       "Negative indexes count from the other end.",
+       "-1 means \"one step from the end\"."
+      ],
+      "why": "Negative indexes count backwards from the end of the list."
+     },
+     {
+      "q": "Which method reads a dictionary key safely when it might be missing?",
+      "opts": [
+       "d[key]",
+       "d.get(key)",
+       "d.find(key)",
+       "d.read(key)"
+      ],
+      "ans": 1,
+      "topic": "Dictionaries",
+      "diff": 2,
+      "ch": 2,
+      "hints": [
+       "Square brackets raise an error for a missing key.",
+       "Only one of the remaining methods actually exists on dictionaries."
+      ],
+      "why": "The safe lookup method returns None, or a default you supply, instead of raising KeyError."
+     },
+     {
+      "q": "What does {1, 2, 2, 3, 3} evaluate to?",
+      "opts": [
+       "[1, 2, 3]",
+       "{1, 2, 2, 3, 3}",
+       "{1, 2, 3}",
+       "An error"
+      ],
+      "ans": 2,
+      "topic": "Sets",
+      "diff": 2,
+      "ch": 2,
+      "hints": [
+       "Curly braces without key:value pairs make a set.",
+       "What does a set do with repeated values?"
+      ],
+      "why": "A set keeps only one copy of each value."
+     },
+     {
+      "q": "def area(w, h=1): return w * h\nWhat does area(5) return?",
+      "opts": [
+       "5",
+       "None",
+       "TypeError",
+       "1"
+      ],
+      "ans": 0,
+      "topic": "Functions",
+      "diff": 3,
+      "ch": 0,
+      "hints": [
+       "Only one argument is passed — where does h get its value?",
+       "Look at the parameter list: h already has a value."
+      ],
+      "why": "Default parameters are used when the caller leaves that argument out."
+     }
+    ]
+   },
+   {
+    "id": "c1l3",
+    "n": 3,
+    "title": "Errors, Objects & Modules",
+    "pm": 70,
+    "tip": "try / except / finally and what self means inside a class are the most tested ideas.",
+    "chapters": [
+     {
+      "title": "Handling Errors",
+      "blocks": [
+       [
+        "code",
+        "try:\n    n = int(input_text)\nexcept ValueError as e:\n    print(\"Not a number:\", e)\nfinally:\n    print(\"Always runs\")"
+       ],
+       [
+        "p",
+        "except catches a named error so the program can recover. finally runs whether or not an error happened — good for clean-up."
+       ],
+       [
+        "code",
+        "with open(\"data.txt\") as f:    # file closes automatically\n    for line in f:\n        print(line.strip())"
+       ]
+      ]
+     },
+     {
+      "title": "Classes & Objects",
+      "blocks": [
+       [
+        "code",
+        "class Student:\n    def __init__(self, name):     # constructor\n        self.name = name\n        self.grades = []\n\n    def add(self, g):\n        self.grades.append(g)\n\nada = Student(\"Ada\")   # __init__ runs here\nada.add(85)"
+       ],
+       [
+        "p",
+        "A class is a blueprint; an object is one instance of it. self is the particular object the method was called on."
+       ],
+       [
+        "tip",
+        "class Mentor(Student): inherits every method of Student and can add or override its own."
+       ]
+      ]
+     },
+     {
+      "title": "Modules & Comprehensions",
+      "blocks": [
+       [
+        "code",
+        "import math\nmath.sqrt(16)              # 4.0\nfrom statistics import mean\nmean([2, 4, 6])            # 4"
+       ],
+       [
+        "code",
+        "squares = [x ** 2 for x in range(5)]       # [0, 1, 4, 9, 16]\nevens   = [x for x in range(10) if x % 2 == 0]"
+       ],
+       [
+        "ok",
+        "A comprehension builds a list in one readable line: [expression for item in sequence if condition]."
+       ]
+      ]
+     }
+    ],
+    "qs": [
+     {
+      "q": "When does a finally block run?",
+      "opts": [
+       "Only if no error occurs",
+       "Only if an error occurs",
+       "Always, error or not",
+       "Only when called"
+      ],
+      "ans": 2,
+      "topic": "Error handling",
+      "diff": 1,
+      "ch": 0,
+      "hints": [
+       "finally is designed for clean-up work.",
+       "Clean-up must happen whatever went wrong — or right."
+      ],
+      "why": "The finally block is guaranteed to execute once the try block finishes, whatever the outcome."
+     },
+     {
+      "q": "What does self refer to inside a method?",
+      "opts": [
+       "The class itself",
+       "The current object instance",
+       "The parent class",
+       "The module"
+      ],
+      "ans": 1,
+      "topic": "Classes",
+      "diff": 2,
+      "ch": 1,
+      "hints": [
+       "ada.add(85) — Python passes something in as self automatically.",
+       "Two objects can call the same method; self tells them apart."
+      ],
+      "why": "self is the specific object that the method was called on, so each object works with its own data."
+     },
+     {
+      "q": "What does [x ** 2 for x in range(4)] produce?",
+      "opts": [
+       "[1, 4, 9, 16]",
+       "[0, 1, 4, 9]",
+       "[0, 2, 4, 6]",
+       "[2, 4, 8, 16]"
+      ],
+      "ans": 1,
+      "topic": "Comprehensions",
+      "diff": 2,
+      "ch": 2,
+      "hints": [
+       "Start by listing what range(4) produces.",
+       "Then square each of those values."
+      ],
+      "why": "The comprehension applies the expression to every value range produces, starting from zero."
+     },
+     {
+      "q": "Which error is raised by int(\"abc\")?",
+      "opts": [
+       "TypeError",
+       "KeyError",
+       "ValueError",
+       "IndexError"
+      ],
+      "ans": 2,
+      "topic": "Error handling",
+      "diff": 2,
+      "ch": 0,
+      "hints": [
+       "The type (a string) is acceptable to int() — the problem is the content.",
+       "Which error describes a value of the right type but the wrong content?"
+      ],
+      "why": "Passing a string that cannot be read as a number is a problem with the value, not with its type."
+     },
+     {
+      "q": "What is the main benefit of \"with open(...) as f\"?",
+      "opts": [
+       "It reads faster",
+       "The file closes automatically, even after an error",
+       "It can only read",
+       "It encrypts the file"
+      ],
+      "ans": 1,
+      "topic": "Files",
+      "diff": 3,
+      "ch": 0,
+      "hints": [
+       "Think about what happens when the indented block ends.",
+       "What must always happen to a file after you are done with it?"
+      ],
+      "why": "The with statement guarantees clean-up when the block exits, including when an error occurs."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "c2",
+  "by": "p1",
+  "pub": true,
+  "icon": "🧮",
+  "title": "Algorithmic Thinking",
+  "cat": "Programming",
+  "desc": "Break problems down, reason about efficiency with Big-O, and learn the classic searching and sorting algorithms.",
+  "levels": [
+   {
+    "id": "c2l1",
+    "n": 1,
+    "title": "Problem Solving & Complexity",
+    "pm": 60,
+    "tip": "Know what each Big-O class means and why binary search needs sorted data.",
+    "chapters": [
+     {
+      "title": "What Is an Algorithm?",
+      "blocks": [
+       [
+        "p",
+        "An algorithm is a finite, step-by-step procedure that turns an input into an output. Good problem solvers decompose a problem, spot patterns, and test their idea on a small example by hand before coding."
+       ],
+       [
+        "code",
+        "# Find the largest number — an algorithm in 4 steps\ndef largest(nums):\n    best = nums[0]\n    for n in nums[1:]:\n        if n > best:\n            best = n\n    return best"
+       ],
+       [
+        "tip",
+        "Always trace your algorithm on a tiny input such as [3, 9, 2] before trusting it."
+       ]
+      ]
+     },
+     {
+      "title": "Big-O Notation",
+      "blocks": [
+       [
+        "p",
+        "Big-O describes how the number of steps grows as the input size n grows."
+       ],
+       [
+        "code",
+        "O(1)        constant      — read nums[0]\nO(log n)    logarithmic   — binary search\nO(n)        linear        — one loop over the data\nO(n log n)  linearithmic  — merge sort\nO(n²)       quadratic     — a loop inside a loop"
+       ],
+       [
+        "warn",
+        "Two nested loops over the same n items run about n × n times."
+       ]
+      ]
+     },
+     {
+      "title": "Searching",
+      "blocks": [
+       [
+        "p",
+        "Linear search checks items one by one and works on any list: O(n). Binary search repeatedly halves a SORTED list by comparing with the middle item: O(log n)."
+       ],
+       [
+        "code",
+        "def binary_search(items, target):\n    lo, hi = 0, len(items) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if items[mid] == target: return mid\n        if items[mid] < target: lo = mid + 1\n        else: hi = mid - 1\n    return -1"
+       ],
+       [
+        "ok",
+        "1,000,000 sorted items need at most about 20 binary-search steps."
+       ]
+      ]
+     }
+    ],
+    "qs": [
+     {
+      "q": "What is the time complexity of a single loop over n items?",
+      "opts": [
+       "O(1)",
+       "O(n)",
+       "O(n²)",
+       "O(log n)"
+      ],
+      "ans": 1,
+      "topic": "Complexity",
+      "diff": 1,
+      "ch": 1,
+      "hints": [
+       "How many times does the loop body run for n items?",
+       "The work grows in direct proportion to n."
+      ],
+      "why": "Doing a fixed amount of work once per item gives growth proportional to the input size."
+     },
+     {
+      "q": "Binary search only works correctly if the data is…",
+      "opts": [
+       "sorted",
+       "unique",
+       "numeric",
+       "in a dictionary"
+      ],
+      "ans": 0,
+      "topic": "Searching",
+      "diff": 1,
+      "ch": 2,
+      "hints": [
+       "How does binary search decide which half to throw away?",
+       "That decision only makes sense if the items are in a certain arrangement."
+      ],
+      "why": "Comparing with the middle item lets you discard half the data only when the data is in order."
+     },
+     {
+      "q": "Two nested loops that each run over all n items have complexity…",
+      "opts": [
+       "O(n)",
+       "O(2n)",
+       "O(n²)",
+       "O(log n)"
+      ],
+      "ans": 2,
+      "topic": "Complexity",
+      "diff": 2,
+      "ch": 1,
+      "hints": [
+       "For each pass of the outer loop, how many times does the inner loop run?",
+       "Multiply the two counts together."
+      ],
+      "why": "The inner loop runs n times for every one of the n outer iterations."
+     },
+     {
+      "q": "Roughly how many steps does binary search need for 1,000 sorted items?",
+      "opts": [
+       "About 10",
+       "About 100",
+       "About 500",
+       "About 1,000"
+      ],
+      "ans": 0,
+      "topic": "Searching",
+      "diff": 2,
+      "ch": 2,
+      "hints": [
+       "Each step halves what is left: 1000 → 500 → 250 → …",
+       "How many halvings until only one item remains? 2¹⁰ = 1024."
+      ],
+      "why": "Halving each step means the step count grows with the logarithm (base 2) of n."
+     },
+     {
+      "q": "What is the first thing to do with a new programming problem?",
+      "opts": [
+       "Start typing code",
+       "Understand the input and expected output with a small example",
+       "Pick the fastest language",
+       "Optimise for speed"
+      ],
+      "ans": 1,
+      "topic": "Problem solving",
+      "diff": 1,
+      "ch": 0,
+      "hints": [
+       "You cannot design steps until you know where you start and where you finish.",
+       "Working a tiny example by hand reveals the pattern."
+      ],
+      "why": "Problem decomposition starts with a clear picture of inputs, outputs and a worked example."
+     }
+    ]
+   },
+   {
+    "id": "c2l2",
+    "n": 2,
+    "title": "Sorting & Recursion",
+    "pm": 65,
+    "tip": "Understand why merge sort is O(n log n) and what a recursive base case is for.",
+    "chapters": [
+     {
+      "title": "Sorting Algorithms",
+      "blocks": [
+       [
+        "p",
+        "Bubble sort swaps neighbours that are out of order and repeats: simple but O(n²). Merge sort splits the list in half, sorts each half and merges them: O(n log n)."
+       ],
+       [
+        "code",
+        "def merge_sort(a):\n    if len(a) <= 1: return a\n    mid = len(a) // 2\n    left, right = merge_sort(a[:mid]), merge_sort(a[mid:])\n    out = []\n    while left and right:\n        out.append(left.pop(0) if left[0] <= right[0] else right.pop(0))\n    return out + left + right"
+       ],
+       [
+        "tip",
+        "Python's built-in sorted() uses Timsort, which is O(n log n)."
+       ]
+      ]
+     },
+     {
+      "title": "Recursion",
+      "blocks": [
+       [
+        "p",
+        "A recursive function calls itself on a smaller version of the problem. Every recursive function needs a base case that stops the calls."
+       ],
+       [
+        "code",
+        "def factorial(n):\n    if n == 0:          # base case\n        return 1\n    return n * factorial(n - 1)\n\nfactorial(4)   # 4 * 3 * 2 * 1 = 24"
+       ],
+       [
+        "warn",
+        "No base case → RecursionError: maximum recursion depth exceeded."
+       ]
+      ]
+     },
+     {
+      "title": "Choosing Data Structures",
+      "blocks": [
+       [
+        "code",
+        "list   → ordered, index access O(1), search O(n)\nset    → unique items, membership test O(1) on average\ndict   → key → value lookup O(1) on average\nqueue  → first in, first out (collections.deque)\nstack  → last in, first out (list.append / list.pop)"
+       ],
+       [
+        "ok",
+        "Picking the right structure often matters more than micro-optimising code."
+       ]
+      ]
+     }
+    ],
+    "qs": [
+     {
+      "q": "What is the time complexity of merge sort?",
+      "opts": [
+       "O(n)",
+       "O(n log n)",
+       "O(n²)",
+       "O(1)"
+      ],
+      "ans": 1,
+      "topic": "Sorting",
+      "diff": 2,
+      "ch": 0,
+      "hints": [
+       "The list is halved repeatedly — how many levels of halving are there?",
+       "At each level, merging touches every item once."
+      ],
+      "why": "There are about log n levels of splitting and each level does linear work to merge."
+     },
+     {
+      "q": "What must every recursive function have to avoid running forever?",
+      "opts": [
+       "A loop",
+       "A base case",
+       "A global variable",
+       "A return of None"
+      ],
+      "ans": 1,
+      "topic": "Recursion",
+      "diff": 1,
+      "ch": 1,
+      "hints": [
+       "Something has to stop the function calling itself.",
+       "Look at the first lines of factorial()."
+      ],
+      "why": "Recursion needs a condition that returns directly without making another recursive call."
+     },
+     {
+      "q": "What does factorial(3) return using the chapter's function?",
+      "opts": [
+       "3",
+       "6",
+       "9",
+       "24"
+      ],
+      "ans": 1,
+      "topic": "Recursion",
+      "diff": 2,
+      "ch": 1,
+      "hints": [
+       "Write it out: 3 * factorial(2).",
+       "Keep expanding until you reach factorial(0)."
+      ],
+      "why": "Each call multiplies n by the result for n − 1 until the base case returns 1."
+     },
+     {
+      "q": "Which structure gives the fastest \"is x present?\" check on average?",
+      "opts": [
+       "list",
+       "tuple",
+       "set",
+       "string"
+      ],
+      "ans": 2,
+      "topic": "Data structures",
+      "diff": 2,
+      "ch": 2,
+      "hints": [
+       "Lists and tuples check items one at a time.",
+       "Which structure uses hashing for membership?"
+      ],
+      "why": "Hash-based structures can test membership in constant time on average."
+     },
+     {
+      "q": "Which data structure is \"last in, first out\"?",
+      "opts": [
+       "Queue",
+       "Stack",
+       "Set",
+       "Dictionary"
+      ],
+      "ans": 1,
+      "topic": "Data structures",
+      "diff": 1,
+      "ch": 2,
+      "hints": [
+       "Think of a pile of plates.",
+       "The one you added most recently is the first one you take off."
+      ],
+      "why": "LIFO describes a structure where the most recently added item is removed first."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "c3",
+  "by": "p2",
+  "pub": true,
+  "icon": "🤖",
+  "title": "AI Leadership",
+  "cat": "AI Leadership",
+  "desc": "For managers and professionals: what AI can do, how to lead responsible adoption, and how to build an AI strategy.",
+  "levels": [
+   {
+    "id": "c3l1",
+    "n": 1,
+    "title": "AI Foundations for Leaders",
+    "pm": 60,
+    "tip": "Be clear on supervised vs unsupervised learning, overfitting and hallucinations.",
+    "chapters": [
+     {
+      "title": "What AI Is (and Isn't)",
+      "blocks": [
+       [
+        "p",
+        "Artificial intelligence is the field of building systems that perform tasks normally needing human intelligence: recognising patterns, understanding language and making decisions."
+       ],
+       [
+        "p",
+        "Most AI in business today is machine learning — systems that learn patterns from data rather than following hand-written rules."
+       ],
+       [
+        "tip",
+        "Leaders do not need to code, but they do need to ask: what data does this learn from, and how will we know it works?"
+       ]
+      ]
+     },
+     {
+      "title": "How Machines Learn",
+      "blocks": [
+       [
+        "p",
+        "Supervised learning learns from labelled examples, such as emails marked spam or not spam. Unsupervised learning finds structure, such as customer segments, without labels. Reinforcement learning learns by trial and reward."
+       ],
+       [
+        "p",
+        "Data is split into a training set to fit the model and a test set to check it on unseen data. Overfitting means the model memorised the training data and performs poorly on new data."
+       ],
+       [
+        "warn",
+        "A model that is 99% accurate on its training data can still fail badly in the real world."
+       ]
+      ]
+     },
+     {
+      "title": "Generative AI & LLMs",
+      "blocks": [
+       [
+        "p",
+        "Generative AI creates new content — text, images, code. Large language models (LLMs) are trained on huge amounts of text to predict the next word."
+       ],
+       [
+        "p",
+        "LLMs can produce fluent but false statements, called hallucinations. Outputs that matter must be checked by a person."
+       ],
+       [
+        "ok",
+        "Good uses: drafting, summarising, coding help, tutoring. Risky uses: unreviewed legal, medical or financial advice."
+       ]
+      ]
+     }
+    ],
+    "qs": [
+     {
+      "q": "Training a model on emails labelled \"spam\" or \"not spam\" is…",
+      "opts": [
+       "supervised learning",
+       "unsupervised learning",
+       "reinforcement learning",
+       "rule-based AI"
+      ],
+      "ans": 0,
+      "topic": "Machine learning",
+      "diff": 1,
+      "ch": 1,
+      "hints": [
+       "Each example comes with the correct answer attached.",
+       "Those labels act like a teacher."
+      ],
+      "why": "When training data carries the correct label, the model learns by being corrected against those labels."
+     },
+     {
+      "q": "Grouping customers by behaviour with no predefined labels is…",
+      "opts": [
+       "supervised learning",
+       "unsupervised learning",
+       "regression",
+       "reinforcement learning"
+      ],
+      "ans": 1,
+      "topic": "Machine learning",
+      "diff": 1,
+      "ch": 1,
+      "hints": [
+       "Are there any labels in this data?",
+       "The model has to discover the groups on its own."
+      ],
+      "why": "Finding structure such as clusters in unlabelled data is a different family of learning."
+     },
+     {
+      "q": "A model scores 99% on training data but 60% on new data. This is…",
+      "opts": [
+       "underfitting",
+       "overfitting",
+       "generalisation",
+       "data cleaning"
+      ],
+      "ans": 1,
+      "topic": "Training and testing",
+      "diff": 2,
+      "ch": 1,
+      "hints": [
+       "It learned the training data \"too well\".",
+       "Think \"over\" versus \"under\"."
+      ],
+      "why": "Memorising training examples instead of learning a general pattern makes performance collapse on unseen data."
+     },
+     {
+      "q": "When an LLM confidently states something false, it is called a…",
+      "opts": [
+       "bug report",
+       "hallucination",
+       "bias",
+       "prompt"
+      ],
+      "ans": 1,
+      "topic": "Generative AI",
+      "diff": 1,
+      "ch": 2,
+      "hints": [
+       "The term is borrowed from psychology.",
+       "It means perceiving something that is not really there."
+      ],
+      "why": "LLMs generate plausible text, which can include invented facts presented with confidence."
+     },
+     {
+      "q": "What do LLMs fundamentally learn to do during training?",
+      "opts": [
+       "Search the internet",
+       "Predict the next word",
+       "Store a copy of every document",
+       "Follow hand-written rules"
+      ],
+      "ans": 1,
+      "topic": "Generative AI",
+      "diff": 2,
+      "ch": 2,
+      "hints": [
+       "Training uses a very simple objective repeated billions of times.",
+       "Given the text so far, what comes next?"
+      ],
+      "why": "Language models are trained to predict the next piece of text from the text that came before."
+     }
+    ]
+   },
+   {
+    "id": "c3l2",
+    "n": 2,
+    "title": "Responsible AI & Strategy",
+    "pm": 65,
+    "tip": "Link bias to training data, know the EU AI Act is risk-based, and start strategy from a business problem.",
+    "chapters": [
+     {
+      "title": "Ethics & Bias",
+      "blocks": [
+       [
+        "p",
+        "Responsible AI rests on fairness, transparency and explainability, privacy, accountability and safety."
+       ],
+       [
+        "p",
+        "Bias usually enters through data that does not represent everyone the system will affect — for example a hiring model trained mostly on past male hires."
+       ],
+       [
+        "warn",
+        "Removing a protected attribute such as gender does not remove bias if other features act as proxies for it."
+       ]
+      ]
+     },
+     {
+      "title": "Regulation & Governance",
+      "blocks": [
+       [
+        "p",
+        "In the UK and EU, GDPR governs personal data. The EU AI Act takes a risk-based approach: unacceptable-risk uses are banned, high-risk uses face strict obligations, and lower-risk uses need transparency."
+       ],
+       [
+        "tip",
+        "Governance means named owners, documented models, human oversight and a process for complaints."
+       ]
+      ]
+     },
+     {
+      "title": "AI Strategy & Leading Change",
+      "blocks": [
+       [
+        "p",
+        "An AI strategy starts with a business problem and measurable value, checks data readiness, runs a small pilot, then scales with governance."
+       ],
+       [
+        "p",
+        "Kotter's 8 steps for leading change begin with creating a sense of urgency and forming a guiding coalition. Involving people early reduces resistance."
+       ],
+       [
+        "ok",
+        "Start small, measure, learn, then scale."
+       ]
+      ]
+     }
+    ],
+    "qs": [
+     {
+      "q": "What is the most common source of bias in an AI system?",
+      "opts": [
+       "The programming language",
+       "Unrepresentative training data",
+       "The server hardware",
+       "Too many users"
+      ],
+      "ans": 1,
+      "topic": "AI ethics",
+      "diff": 1,
+      "ch": 0,
+      "hints": [
+       "Where does a model learn its behaviour from?",
+       "If some groups are missing from that source, what happens to predictions for them?"
+      ],
+      "why": "Models reproduce the patterns in their data, so skewed data produces skewed outcomes."
+     },
+     {
+      "q": "How does the EU AI Act classify AI systems?",
+      "opts": [
+       "By company size",
+       "By risk level",
+       "By programming language",
+       "By price"
+      ],
+      "ans": 1,
+      "topic": "Regulation",
+      "diff": 2,
+      "ch": 1,
+      "hints": [
+       "Obligations get stricter for some uses than others.",
+       "What would make a use \"high\" rather than \"low\"?"
+      ],
+      "why": "The Act scales its obligations to how much harm a use of AI could cause."
+     },
+     {
+      "q": "What should an AI strategy start with?",
+      "opts": [
+       "Buying the latest model",
+       "A clear business problem with measurable value",
+       "Hiring a large data team",
+       "Replacing staff"
+      ],
+      "ans": 1,
+      "topic": "AI strategy",
+      "diff": 1,
+      "ch": 2,
+      "hints": [
+       "Technology should serve a goal.",
+       "What would you measure success against?"
+      ],
+      "why": "Anchoring AI work to a business outcome keeps investment tied to value."
+     },
+     {
+      "q": "What is the first step in Kotter's 8-step change model?",
+      "opts": [
+       "Create a sense of urgency",
+       "Celebrate short-term wins",
+       "Anchor change in culture",
+       "Remove obstacles"
+      ],
+      "ans": 0,
+      "topic": "Change management",
+      "diff": 2,
+      "ch": 2,
+      "hints": [
+       "Before people act, they need a reason to.",
+       "Celebrating and anchoring come at the end."
+      ],
+      "why": "People must see why change is needed before any later step can succeed."
+     },
+     {
+      "q": "Removing \"gender\" from a hiring model's inputs guarantees it is fair. True?",
+      "opts": [
+       "True — no gender, no bias",
+       "False — other features can act as proxies",
+       "True if accuracy is high",
+       "Only in the UK"
+      ],
+      "ans": 1,
+      "topic": "AI ethics",
+      "diff": 3,
+      "ch": 0,
+      "hints": [
+       "Could other information correlate with gender?",
+       "Think about hobbies, previous job titles or career gaps."
+      ],
+      "why": "Correlated features can carry the same information as the removed attribute."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "c4",
+  "by": "p2",
+  "pub": true,
+  "icon": "📊",
+  "title": "Micro MBA Essentials",
+  "cat": "Business",
+  "desc": "Core MBA tools in short modules: strategic analysis, marketing, finance and leadership.",
+  "levels": [
+   {
+    "id": "c4l1",
+    "n": 1,
+    "title": "Strategy & Marketing",
+    "pm": 60,
+    "tip": "Remember which SWOT elements are internal and the four Ps of marketing.",
+    "chapters": [
+     {
+      "title": "Strategic Analysis",
+      "blocks": [
+       [
+        "p",
+        "SWOT looks at internal Strengths and Weaknesses and external Opportunities and Threats."
+       ],
+       [
+        "p",
+        "PESTLE scans the wider environment: Political, Economic, Social, Technological, Legal and Environmental factors."
+       ],
+       [
+        "tip",
+        "Internal = things the organisation controls. External = things it must respond to."
+       ]
+      ]
+     },
+     {
+      "title": "Competitive Forces",
+      "blocks": [
+       [
+        "p",
+        "Porter's Five Forces assess how attractive an industry is: rivalry among competitors, threat of new entrants, threat of substitutes, buyer power and supplier power."
+       ],
+       [
+        "ok",
+        "High barriers to entry protect existing firms and reduce the threat of new entrants."
+       ]
+      ]
+     },
+     {
+      "title": "Marketing Mix & STP",
+      "blocks": [
+       [
+        "p",
+        "The marketing mix (4Ps) is Product, Price, Place and Promotion."
+       ],
+       [
+        "p",
+        "STP: Segment the market into groups, Target the groups you will serve, then Position your offer in their minds compared with competitors."
+       ],
+       [
+        "warn",
+        "\"People\" appears in the extended 7Ps for services, not the original 4Ps."
+       ]
+      ]
+     }
+    ],
+    "qs": [
+     {
+      "q": "In SWOT, which two elements are internal?",
+      "opts": [
+       "Strengths and Weaknesses",
+       "Opportunities and Threats",
+       "Strengths and Opportunities",
+       "Weaknesses and Threats"
+      ],
+      "ans": 0,
+      "topic": "Strategy",
+      "diff": 1,
+      "ch": 0,
+      "hints": [
+       "Which factors can the organisation control directly?",
+       "Market changes and competitors come from outside."
+      ],
+      "why": "Internal factors are capabilities the organisation controls; external factors come from its environment."
+     },
+     {
+      "q": "What does the \"E\" that comes second in PESTLE stand for?",
+      "opts": [
+       "Environmental",
+       "Economic",
+       "Ethical",
+       "Educational"
+      ],
+      "ans": 1,
+      "topic": "Strategy",
+      "diff": 1,
+      "ch": 0,
+      "hints": [
+       "PESTLE has two Es — this is the one straight after Political.",
+       "Think interest rates, inflation and exchange rates."
+      ],
+      "why": "PESTLE lists Political, then a factor about money and markets, before Social, Technological, Legal and Environmental."
+     },
+     {
+      "q": "Which is NOT one of the original 4Ps of marketing?",
+      "opts": [
+       "Product",
+       "Price",
+       "People",
+       "Promotion"
+      ],
+      "ans": 2,
+      "topic": "Marketing",
+      "diff": 2,
+      "ch": 2,
+      "hints": [
+       "List the four Ps you know.",
+       "One P is about distribution — where customers buy."
+      ],
+      "why": "The original mix covers product, price, distribution and promotion; extra Ps were added later for services."
+     },
+     {
+      "q": "High barriers to entry mainly reduce which force?",
+      "opts": [
+       "Buyer power",
+       "Threat of new entrants",
+       "Supplier power",
+       "Threat of substitutes"
+      ],
+      "ans": 1,
+      "topic": "Competitive forces",
+      "diff": 2,
+      "ch": 1,
+      "hints": [
+       "Barriers make it hard for someone to do what?",
+       "Who would have to overcome the barrier?"
+      ],
+      "why": "Barriers such as high start-up cost or regulation make it harder for newcomers to join an industry."
+     },
+     {
+      "q": "In STP, what comes immediately after segmentation?",
+      "opts": [
+       "Positioning",
+       "Targeting",
+       "Pricing",
+       "Promotion"
+      ],
+      "ans": 1,
+      "topic": "Marketing",
+      "diff": 1,
+      "ch": 2,
+      "hints": [
+       "S, then T, then P.",
+       "After dividing the market, you choose which groups to serve."
+      ],
+      "why": "After splitting the market into groups you decide which groups to serve, then how to position for them."
+     }
+    ]
+   },
+   {
+    "id": "c4l2",
+    "n": 2,
+    "title": "Finance & Leadership",
+    "pm": 65,
+    "tip": "Practise the ROI and gross margin formulas, and match leadership styles to their descriptions.",
+    "chapters": [
+     {
+      "title": "Financial Basics",
+      "blocks": [
+       [
+        "code",
+        "Profit        = Revenue − Costs\nGross margin  = (Revenue − Cost of goods sold) ÷ Revenue\nROI           = (Gain − Cost) ÷ Cost   × 100%\nBreak-even    = point where Revenue = Total costs"
+       ],
+       [
+        "p",
+        "Example: an investment costs £1,000 and returns £1,300. The gain is £300."
+       ],
+       [
+        "tip",
+        "Divide ROI by the original cost, not by the return."
+       ]
+      ]
+     },
+     {
+      "title": "Performance & Cash",
+      "blocks": [
+       [
+        "p",
+        "A KPI (key performance indicator) is a measurable value linked to a strategic goal. Good KPIs are specific, measurable and owned by someone."
+       ],
+       [
+        "p",
+        "Cash flow tracks money actually moving in and out. A profitable business can still fail if it runs out of cash."
+       ],
+       [
+        "warn",
+        "Profit is not the same as cash in the bank."
+       ]
+      ]
+     },
+     {
+      "title": "Leadership Styles",
+      "blocks": [
+       [
+        "p",
+        "Transformational leaders inspire with a shared vision. Transactional leaders use clear exchanges and rewards. Servant leaders put the team's needs first. Situational leaders adapt their style to the team's readiness."
+       ],
+       [
+        "ok",
+        "Effective leaders combine clear direction with listening and trust."
+       ]
+      ]
+     }
+    ],
+    "qs": [
+     {
+      "q": "An investment costs £1,000 and returns £1,300. What is the ROI?",
+      "opts": [
+       "13%",
+       "30%",
+       "23%",
+       "130%"
+      ],
+      "ans": 1,
+      "topic": "Finance",
+      "diff": 2,
+      "ch": 0,
+      "hints": [
+       "Find the gain first: return minus cost.",
+       "Divide the gain by the original cost."
+      ],
+      "why": "ROI compares the gain with what was originally invested, expressed as a percentage."
+     },
+     {
+      "q": "Revenue is £500 and cost of goods sold is £300. What is the gross margin?",
+      "opts": [
+       "40%",
+       "60%",
+       "20%",
+       "66%"
+      ],
+      "ans": 0,
+      "topic": "Finance",
+      "diff": 2,
+      "ch": 0,
+      "hints": [
+       "Subtract cost of goods sold from revenue first.",
+       "Divide by revenue, not by cost."
+      ],
+      "why": "Gross margin is the share of revenue left after the direct cost of the goods sold."
+     },
+     {
+      "q": "A profitable company runs out of money to pay suppliers. What is the problem?",
+      "opts": [
+       "Low margin",
+       "Cash flow",
+       "Too many KPIs",
+       "High ROI"
+      ],
+      "ans": 1,
+      "topic": "Finance",
+      "diff": 2,
+      "ch": 1,
+      "hints": [
+       "Profit on paper is not the same as money available today.",
+       "What tracks money actually moving in and out?"
+      ],
+      "why": "Timing of money in and out can leave a profitable firm unable to pay its bills."
+     },
+     {
+      "q": "A leader who inspires the team with a shared vision shows which style?",
+      "opts": [
+       "Transactional",
+       "Transformational",
+       "Laissez-faire",
+       "Autocratic"
+      ],
+      "ans": 1,
+      "topic": "Leadership",
+      "diff": 1,
+      "ch": 2,
+      "hints": [
+       "Which style is about change and inspiration?",
+       "It is not the one based on rewards and exchanges."
+      ],
+      "why": "This style motivates through vision and personal inspiration rather than rewards."
+     },
+     {
+      "q": "What makes a good KPI?",
+      "opts": [
+       "It is vague so it never fails",
+       "It is measurable and linked to a strategic goal",
+       "It changes every week",
+       "It is only used by finance"
+      ],
+      "ans": 1,
+      "topic": "Performance",
+      "diff": 1,
+      "ch": 1,
+      "hints": [
+       "How would you know whether you hit it?",
+       "Why is the organisation tracking it at all?"
+      ],
+      "why": "A useful indicator can be measured and tells you about progress towards a goal that matters."
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,36 @@
+# Render Blueprint: creates the Flask API + a PostgreSQL database in one go.
+# Render dashboard -> New -> Blueprint -> pick this GitHub repo.
+services:
+  - type: web
+    name: eduai-backend
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    # One worker on purpose: the ML readiness model and tutor bot live in memory.
+    # --preload creates tables + seeds the demo data once, before serving requests.
+    startCommand: gunicorn --preload --workers 1 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT "app:create_app()"
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: DATABASE_URL
+        fromDatabase:
+          name: eduai-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: http://localhost:5173   # replace with your frontend URL once it is deployed
+      - key: SHOW_APPROVAL_CODE
+        value: "1"
+      - key: SEED_DEMO_DATA
+        value: "1"
+      - key: SEED_SAMPLE_LEARNERS
+        value: "1"
+
+databases:
+  - name: eduai-db
+    plan: free
+    databaseName: microcourses
+    user: eduai
